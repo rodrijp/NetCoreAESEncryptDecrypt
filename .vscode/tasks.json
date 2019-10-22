@@ -37,6 +37,13 @@
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "type": "npm",
+            "script": "build",
+            "path": "PasswordWeb/ClientApp/",
+            "group": "build",
+            "problemMatcher": []
         }
     ]
 }

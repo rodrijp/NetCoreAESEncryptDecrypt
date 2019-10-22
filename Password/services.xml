@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Service>
+    <Name>pepe</Name>
+    <Size>12</Size>
+    <IncludeEspecialChar>true</IncludeEspecialChar>
+    <IncludeNumbers>false</IncludeNumbers>
+    <IncludeUpperLower>false</IncludeUpperLower>
+    <OnlyNumbers>false</OnlyNumbers>
+  </Service>
+</ArrayOfService>

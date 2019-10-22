@@ -1,0 +1,39 @@
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #E01A76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.menu {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #cccccc;
+  z-index: 2;
+  background-color:  #fff;
+}
+
+.item {
+  padding: 2px 6px;
+  cursor: default;
+}
+
+.item-highlighted {
+  color: white;
+  background-color: #4095bf;
+}
+
+.item-header {
+  background-color: #eeeeee;
+  color: #454545;
+  font-weight: bold;
+}
