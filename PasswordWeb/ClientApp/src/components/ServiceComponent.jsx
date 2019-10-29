@@ -21,7 +21,7 @@ export class ServiceComponent extends React.Component {
           .then(data => 
           {
             this.serviceList = data;
-            this.setState({ serviceFiltered: data })
+            //this.setState({ serviceFiltered: data })
           }
         );
       }

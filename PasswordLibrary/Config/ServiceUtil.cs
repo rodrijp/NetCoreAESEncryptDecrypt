@@ -9,7 +9,7 @@ namespace PasswordLibrary.Config
 {
     public static class ServiceUtil
     {
-        private static String _ServiceFile = "services.xml";
+        private static String _ServiceFile = "App_Data/services.xml";
         private static List<Service> _Services = null;
 
         public static List<Service> Services { 

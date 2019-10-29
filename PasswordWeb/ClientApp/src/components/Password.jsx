@@ -9,7 +9,7 @@ export class Password extends React.Component {
 
       constructor(props) {
         super(props);
-        this.state = { service: new Service(), key: String, password: String };
+        this.state = { service: new Service(), key: "", password: "" };
       }
 
 
