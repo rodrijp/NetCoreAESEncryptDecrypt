@@ -46,7 +46,7 @@
             "name": ".NET Core Launch (windform)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "buildApp",
             "program": "${workspaceFolder}/PasswordApp/bin/Debug/netcoreapp3.0/PasswordApp.exe",
             "args": [],
             "cwd": "${workspaceFolder}/PasswordApp",

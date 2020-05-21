@@ -1,4 +1,4 @@
-{
+ {
     "version": "2.0.0",
     "tasks": [
         {
@@ -8,6 +8,18 @@
             "args": [
                 "build",
                 "${workspaceFolder}/Password/Password.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "buildApp",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/PasswordApp/PasswordApp.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
