@@ -3,13 +3,23 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using PasswordLibrary.Config;
 
 namespace PasswordLibrary
 {
     public static class PasswordUtil
     {
-        const string SALT = "adaaf3d45gfad34d"; // Random
-        const string VECTOR = "aadf341asdf3dfgh";
+        private static string SALT {
+            get {
+                return ServiceUtil.ServiceConfig.Salt;
+            }
+        }
+  
+        private static string VECTOR {
+            get {
+                return ServiceUtil.ServiceConfig.Vector;
+            }
+        } 
 
         static byte[] GetKey(String keyString, int bytes)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Reflection;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -9,10 +10,10 @@ namespace PasswordLibrary.Config
 {
     public static class ServiceUtil
     {
-        private static String _ServiceFile = "App_Data/services.xml";
-        private static List<Service> _Services = null;
+        private static String _ServiceFile = @"\App_Data\services.xml";
+        private static ServiceConfig _Services = null;
 
-        public static List<Service> Services { 
+        public static ServiceConfig ServiceConfig { 
             get {
                 if (_Services == null)
                 {
@@ -24,7 +25,7 @@ namespace PasswordLibrary.Config
 
         public static Service Get(String serviceName)
         {
-            var service = Services.FirstOrDefault(x => String.Compare(x.Name, serviceName, true) == 0);
+            var service = ServiceConfig.Services.FirstOrDefault(x => String.Compare(x.Name, serviceName, true) == 0);
             return service;
         }
 
@@ -39,18 +40,19 @@ namespace PasswordLibrary.Config
                 service.Size = serviceAdd.Size;
             } else
             {
-                Services.Add(serviceAdd);
+                ServiceConfig.Services.Add(serviceAdd);
             }
             SetToFile();
         }
 
-        private static List<Service> GetFromFile()
+        private static ServiceConfig GetFromFile()
         {
-            //var p = Directory.GetCurrentDirectory();
-            if (!File.Exists(_ServiceFile)) return new List<Service>();
-            var serializer = new XmlSerializer(typeof(List<Service>));
-            var fs = new FileStream(_ServiceFile, FileMode.Open);
-            var rtn = (List<Service>) serializer.Deserialize(fs);
+                //var p = Directory.GetCurrentDirectory();
+            var pathServiceFile = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + _ServiceFile;
+            if (!File.Exists(pathServiceFile)) return new ServiceConfig();
+            var serializer = new XmlSerializer(typeof(ServiceConfig));
+            var fs = new FileStream(pathServiceFile, FileMode.Open);
+            var rtn = (ServiceConfig) serializer.Deserialize(fs);
             fs.Close();
             return rtn;
         }
@@ -58,8 +60,9 @@ namespace PasswordLibrary.Config
 
         private static void SetToFile()
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Service>));
-            var writer = new StreamWriter(_ServiceFile);
+            var pathServiceFile = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + _ServiceFile;
+            XmlSerializer serializer = new XmlSerializer(typeof(ServiceConfig));
+            var writer = new StreamWriter(pathServiceFile);
             serializer.Serialize(writer, _Services);
             writer.Close();
         }

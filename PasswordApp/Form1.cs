@@ -38,7 +38,7 @@ namespace PasswordApp
 
         public void InitData()
         {
-            this.cmbService.Items.AddRange(ServiceUtil.Services.Select(x => x.Name).ToArray<String>());
+            this.cmbService.Items.AddRange(ServiceUtil.ServiceConfig.Services.Select(x => x.Name).ToArray<String>());
         }
 
         private void InitializeComponent()

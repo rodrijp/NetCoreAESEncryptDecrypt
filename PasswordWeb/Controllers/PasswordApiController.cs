@@ -44,7 +44,7 @@ namespace PasswordWeb.Controllers
 
         [HttpGet("GetServices")]
         public List<Service> GetServices(String service) {
-            return ServiceUtil.Services;
+            return ServiceUtil.ServiceConfig.Services;
         }
 
 /*

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ServiceConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Salt>adaaf3d45gfad34d</Salt>
+<Vector>aadf341asdf3dfgh</Vector> 
+<Services>
   <Service>
     <Name>hola</Name>
-    <Size>15</Size>
+    <Size>12</Size>
     <IncludeEspecialChar>true</IncludeEspecialChar>
-    <IncludeNumbers>true</IncludeNumbers>
-    <IncludeUpperLower>true</IncludeUpperLower>
+    <IncludeNumbers>false</IncludeNumbers>
+    <IncludeUpperLower>false</IncludeUpperLower>
     <OnlyNumbers>false</OnlyNumbers>
   </Service>
   <Service>
@@ -96,20 +99,5 @@
     <IncludeUpperLower>true</IncludeUpperLower>
     <OnlyNumbers>false</OnlyNumbers>
   </Service>
-  <Service>
-    <Name>hola3</Name>
-    <Size>15</Size>
-    <IncludeEspecialChar>true</IncludeEspecialChar>
-    <IncludeNumbers>true</IncludeNumbers>
-    <IncludeUpperLower>true</IncludeUpperLower>
-    <OnlyNumbers>false</OnlyNumbers>
-  </Service>
-  <Service>
-    <Name>hola4</Name>
-    <Size>15</Size>
-    <IncludeEspecialChar>true</IncludeEspecialChar>
-    <IncludeNumbers>true</IncludeNumbers>
-    <IncludeUpperLower>true</IncludeUpperLower>
-    <OnlyNumbers>false</OnlyNumbers>
-  </Service>
-</ArrayOfService>
+</Services>
+</ServiceConfig>

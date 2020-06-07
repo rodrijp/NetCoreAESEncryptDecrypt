@@ -1,4 +1,5 @@
-﻿using PasswordLibrary;
+﻿using System.Reflection;
+using PasswordLibrary;
 using PasswordLibrary.Config;
 using System;
 using System.IO;
@@ -22,12 +23,12 @@ namespace Password
             Console.WriteLine("decryptText:" + decryptText);
             var hashText = PasswordUtil.HashString(plainText, keyString);
             Console.WriteLine("hashText:" + hashText);
-
-            var s = ServiceUtil.Services;
+            
+            var s = ServiceUtil.ServiceConfig.Services;
             ServiceUtil.Add(new Service() { Name = "pepe", Size = 12, IncludeEspecialChar = true });
             Console.WriteLine("File Created");
 
-            
+           
 
 
             Console.ReadKey();
