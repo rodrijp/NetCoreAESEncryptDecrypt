@@ -270,9 +270,9 @@ namespace PasswordApp
 
         private void ChkOnlyNumbers_CheckedChanged(object sender, EventArgs e)
         {
-            chkIncludeEspecialChar.Enabled = !chkOnlyNumbers.Enabled;
-            chkIncludeNumbers.Enabled = !chkOnlyNumbers.Enabled;
-            chkIncludeUpperLower.Enabled = !chkOnlyNumbers.Enabled;
+            chkIncludeEspecialChar.Enabled = !chkOnlyNumbers.Checked;
+            chkIncludeNumbers.Enabled = !chkOnlyNumbers.Checked;
+            chkIncludeUpperLower.Enabled = !chkOnlyNumbers.Checked;
         }
     }
 }
